@@ -1,8 +1,0 @@
-breakfast.default_controller_hello:
-  path: 'breakfast'
-  defaults:
-    _controller: '\Drupal\breakfast\Controller\DefaultController::hello'
-    _title: 'Your Breakfast Choice'
-  requirements:
-    _permission: 'access content'
-
