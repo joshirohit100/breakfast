@@ -32,11 +32,11 @@ class BreakfastWidget extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $value = isset($items[$delta]->value) ? $items[$delta]->value : '';
-      $options = array(
-        'idly' => 'Idly',
-        'dosa' => 'Dosa',
-        'uppuma' => 'Uppuma',
-      );
+    $options = array();
+    $breakfast_items = \Drupal::service('plugin.manager.breakfast')->getDefinitions();
+    foreach($breakfast_items as $plugin_id => $breakfast_item) {
+      $options[$plugin_id] = $breakfast_item['label'];
+    }
 
     $element = array(
       '#type' => 'select',
