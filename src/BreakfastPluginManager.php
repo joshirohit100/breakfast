@@ -21,9 +21,9 @@ class BreakfastPluginManager extends DefaultPluginManager {
     $subdir = 'Plugin/Breakfast';
 
     // The name of the annotation class that contains the plugin definition.
-    $plugin_definition_annotation_name = 'Drupal\Component\Annotation\Plugin';
+    $plugin_definition_annotation_name = 'Drupal\breakfast\Annotation\Breakfast';
 
-    parent::__construct($subdir, $namespaces, $module_handler, $plugin_definition_annotation_name);
+    parent::__construct($subdir, $namespaces, $module_handler, 'Drupal\breakfast\BreakfastInterface', $plugin_definition_annotation_name);
 
     $this->alterInfo('breakfast_info');
 
