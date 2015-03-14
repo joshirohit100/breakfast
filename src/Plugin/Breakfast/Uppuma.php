@@ -7,7 +7,6 @@
 
 namespace Drupal\breakfast\Plugin\Breakfast;
 
-use Drupal\Component\Plugin\PluginBase;
 use Drupal\Core\Annotation\Translation;
 use Drupal\Component\Annotation\Plugin;
 use Drupal\breakfast\BreakfastBase;
