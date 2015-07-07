@@ -31,9 +31,12 @@ class BreakfastFormatter extends FormatterBase {
     $elements = array();
 
     foreach ($items as $delta => $item) {
-      $breakfast_item = \Drupal::service('plugin.manager.breakfast')->getDefinition($item->value);
+      $breakfast_item = \Drupal::service('plugin.manager.breakfast')->createInstance($item->value);
+      $markup = '<h1>'. $breakfast_item->getName() . '</h1>';
+      $markup .= '<img src="'. $breakfast_item->getImage() .'" width="300"/>';
+      $markup .= '<h2>Goes well with:</h2>'. implode(", ", $breakfast_item->servedWith());
       $elements[$delta] = array(
-        '#markup' => '<h1>'. $breakfast_item['label'] . '</h1>',
+        '#markup' => $markup,
       );
     }
 
